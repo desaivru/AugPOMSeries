@@ -10,6 +10,10 @@ import org.testng.annotations.Test;
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constants.AppConstants;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+
 public class AccountPageTest extends BaseTest {
 
 	WebDriver driver;
@@ -29,7 +33,9 @@ public class AccountPageTest extends BaseTest {
 		// we are creating the accountpage reference so that we can call the methods
 		// from AccountPage class with that reference
 	}
-
+	
+	@Description("Verifying Account page title")
+	@Severity(SeverityLevel.MINOR)
 	@Test
 	public void accountPageTitleTest() {
 		Assert.assertEquals(accPage.getAccountPageTitle(), AppConstants.ACCOUNT_PAGE_TITLE);

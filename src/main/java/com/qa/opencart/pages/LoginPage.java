@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.utils.ElementUtil;
 
+import io.qameta.allure.Step;
+
 public class LoginPage {
 	
 	private WebDriver driver;  // making it private so that nobody can access outside the class
@@ -20,7 +22,7 @@ public class LoginPage {
 	protected By emailId = By.id("input-email");
 	protected By pwd = By.id("input-password");
 	protected By loginBtn = By.xpath("//input[@value='Login']");
-	protected By forgotPassword = By.linkText("Forgotten Password");
+	protected By forgotPassword = By.linkText("Forgotten Password11");
 	protected By logo = By.xpath("//img[@title='naveenopencart']");
 	protected By allRigtSideLink = By.xpath("//div[@class='list-group']//a"); //all 13 links
 	
@@ -38,6 +40,7 @@ public class LoginPage {
 	}
 	
 	//page action/page method
+	@Step("Fetching login title")
 	public String getLoginPageTitle() {
 		String title = eleUtil.waitForTitleIs(AppConstants.LOGIN_PAGE_TITLE,AppConstants.SHORT_DEFAULT_WAIT);
 		
@@ -46,6 +49,7 @@ public class LoginPage {
 		return title;
 	}
 	
+	@Step("Fetching url")
 	public String getPageURL() {
 		String Url = eleUtil.waitForUrlContains(AppConstants.LOGIN_PAGE_URL_FRACTION, AppConstants.SHORT_DEFAULT_WAIT);
 		

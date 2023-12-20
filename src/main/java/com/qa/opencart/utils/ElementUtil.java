@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.opencart.exceptions.FrameworkException;
 
+import io.qameta.allure.Step;
+
 public class ElementUtil {
 
 	private WebDriver driver;
@@ -368,6 +370,7 @@ public class ElementUtil {
 		waitForVisisbilityOfElement(locator, timeOut).sendKeys(value);
 	}
 	
+	@Step("Waiting for tilte")
 	public String waitForTitleIs(String title, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		try {
@@ -396,7 +399,7 @@ public class ElementUtil {
 
 	}
 	
-	
+	@Step("Waiting for URL")
 	public String waitForUrlContains(String urlFractionValue, int timeOut) {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));

@@ -10,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.utils.ElementUtil;
 
+import io.qameta.allure.Step;
+
 public class AccountPage{
 	
 	protected WebDriver driver;
@@ -33,7 +35,7 @@ public class AccountPage{
 	private By searchLocator= By.cssSelector("div#search button");
 	private By logOut = By.linkText("Logout");
 	
-	
+	@Step("Fetching Account page title")
 	public String getAccountPageTitle() {
 		String title = eleUtil.waitForTitleIs(AppConstants.ACCOUNT_PAGE_TITLE, AppConstants.SHORT_DEFAULT_WAIT);
 		System.out.println(title);

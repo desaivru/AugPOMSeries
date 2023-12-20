@@ -19,10 +19,14 @@ public class OptionsManager {
 		this.prop = prop;
 		}
 	
-	public ChromeOptions getChromeOption() {
+		public ChromeOptions getChromeOption() {
 		co = new ChromeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless").trim()))co.addArguments("--headless");
 		if(Boolean.parseBoolean(prop.getProperty("incognito").trim()))co.addArguments("--incognito");
+		
+//		String headless = System.getProperty("headless");
+//		if(Boolean.parseBoolean(headless = "true"))co.addArguments("--headless");
+			
 		return co;
 	}
 	
@@ -30,6 +34,10 @@ public class OptionsManager {
 		fo = new FirefoxOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless").trim()))fo.addArguments("--headless");
 		if(Boolean.parseBoolean(prop.getProperty("incognito").trim()))fo.addArguments("--incognito");
+		
+//		String headless = System.getProperty("headless");
+//		if(Boolean.parseBoolean(headless = "true"))fo.addArguments("--headless");
+	
 		return fo;
 	}
 	
@@ -37,6 +45,10 @@ public class OptionsManager {
 		eo = new EdgeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless").trim()))eo.addArguments("--headless");
 		if(Boolean.parseBoolean(prop.getProperty("incognito").trim()))eo.addArguments("--incognito");
+		
+//		String headless = System.getProperty("headless");
+//		if(Boolean.parseBoolean(headless = "true"))eo.addArguments("--headless");
+	
 		return eo;
 	}
 	
