@@ -22,7 +22,7 @@ public class LoginPage {
 	protected By emailId = By.id("input-email");
 	protected By pwd = By.id("input-password");
 	protected By loginBtn = By.xpath("//input[@value='Login']");
-	protected By forgotPassword = By.linkText("Forgotten Password11");
+	protected By forgotPassword = By.linkText("Forgotten Password");
 	protected By logo = By.xpath("//img[@title='naveenopencart']");
 	protected By allRigtSideLink = By.xpath("//div[@class='list-group']//a"); //all 13 links
 	

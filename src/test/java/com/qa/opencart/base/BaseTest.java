@@ -42,7 +42,7 @@ public class BaseTest {
 
 	@Parameters("browser")
 	@BeforeTest
-	public void setup(String browserName) // this browsername comes from testng.xml
+	public void setup(String browserName) // this browser name comes from testng.xml
 	{
 		df = new DriverFactory(); // object of driver factory
 		prop = df.initProp();

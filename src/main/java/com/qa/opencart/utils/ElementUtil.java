@@ -259,7 +259,6 @@ public class ElementUtil {
 
 		act.moveToElement(getElement(secondChildMenuLocator)).build().perform();
 		Thread.sleep(1000);
-
 		doClick(fourthChildMenuLocator);
 	}
 
@@ -315,7 +314,6 @@ public class ElementUtil {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
-	
 	public WebElement waitForPresenceOfElementWithIntervalTime(By locator, int timeOut, int intervalTime) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut), Duration.ofSeconds(intervalTime));
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -335,18 +333,17 @@ public class ElementUtil {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
-	
-	
+
 	public WebElement waitForVisisbilityOfElementWithIntervalTime(By locator, int timeOut, int intervalTime) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut), Duration.ofSeconds(intervalTime));
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
-
 	/**
 	 * An expectation for checking that all elements present on the web page that
-	 * match the locator are visible. Visibility means that the elements are not only
-	 * displayed but also have a height and width that is greater than 0.
+	 * match the locator are visible. Visibility means that the elements are not
+	 * only displayed but also have a height and width that is greater than 0.
+	 * 
 	 * @param locator
 	 * @param timeOut
 	 * @return
@@ -355,11 +352,11 @@ public class ElementUtil {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 	}
-	
+
 	public List<WebElement> waitForPresenceOfElements(By locator, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
-		
+
 	}
 
 	public void doClickWithWait(By locator, int timeOut) {
@@ -369,7 +366,7 @@ public class ElementUtil {
 	public void doSendKeysWithWait(By locator, String value, int timeOut) {
 		waitForVisisbilityOfElement(locator, timeOut).sendKeys(value);
 	}
-	
+
 	@Step("Waiting for tilte")
 	public String waitForTitleIs(String title, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
@@ -382,9 +379,9 @@ public class ElementUtil {
 			e.printStackTrace();
 		}
 		return null;
-		
+
 	}
-	
+
 	public String waitForTitleContains(String fractionValue, int timeOut) {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
@@ -398,7 +395,7 @@ public class ElementUtil {
 		return null;
 
 	}
-	
+
 	@Step("Waiting for URL")
 	public String waitForUrlContains(String urlFractionValue, int timeOut) {
 
@@ -406,14 +403,14 @@ public class ElementUtil {
 		try {
 			if (wait.until(ExpectedConditions.urlContains(urlFractionValue))) {
 				return (driver.getCurrentUrl());
-				}
+			}
 		} catch (TimeoutException e) {
 			System.out.println("URL Fraction Value is not present");
 		}
 		return null;
 
 	}
-	
+
 	public String waitForUrlToBe(String urlToBe, int timeOut) {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
@@ -427,35 +424,35 @@ public class ElementUtil {
 		return null;
 
 	}
-	
-	
-	
-	///*********************Alert with wait*********************************
-	
+
+	/// *********************Alert with wait*********************************
+
 	/**
-	 * This alertIsPresent method will wait for alert and also switch to alert once available we are not required to switch to alert seperately
+	 * This alertIsPresent method will wait for alert and also switch to alert once
+	 * available we are not required to switch to alert seperately
+	 * 
 	 * @param timeOut
 	 * @return
 	 */
 	public Alert waitForJSAlert(int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		return wait.until(ExpectedConditions.alertIsPresent());
-		
-		}
-	
+
+	}
+
 	public void acceptJSAlert(int timeOut) {
 		waitForJSAlert(timeOut).accept();
-		
+
 	}
-	
+
 	public void dismissJSAlert(int timeOut) {
 		waitForJSAlert(timeOut).dismiss();
 	}
-	
+
 	public String getTextOfJSAlert(int timeOut) {
 		return waitForJSAlert(timeOut).getText();
 	}
-	
+
 	public void enterValueOnJSAlert(String value, int timeOut) {
 		waitForJSAlert(timeOut).sendKeys(value);
 	}

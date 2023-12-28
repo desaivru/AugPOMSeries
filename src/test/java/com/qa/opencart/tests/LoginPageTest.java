@@ -26,37 +26,35 @@ public class LoginPageTest extends BaseTest {
 
 	@Description("Verifying login page title")
 	@Severity(SeverityLevel.MINOR)
-	@Test(priority =1)
+	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		String actualTitle = loginpage.getLoginPageTitle();
 		Assert.assertEquals(actualTitle, AppConstants.LOGIN_PAGE_TITLE);
-
 	}
-	
+
 	@Description("Vrifying URL")
 	@Severity(SeverityLevel.MINOR)
-	@Test(priority =2)
+	@Test(priority = 2)
 	public void loginPageUrlTest() {
 		String actualUrl = loginpage.getPageURL();
 		Assert.assertTrue(actualUrl.contains(AppConstants.LOGIN_PAGE_URL_FRACTION));
-		
 	}
-	
+
 	@Description("Verifying forgot password link")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(priority =3)
+	@Test(priority = 3)
 	public void doForgotPwdExistTest() {
 		Assert.assertTrue(loginpage.isForgotPassLinkExist());
 	}
-	
-	@Test(priority =4)
+
+	@Test(priority = 4)
 	public void doLogoExistTest() {
 		Assert.assertTrue(loginpage.isLogoExist());
 	}
-	
-	@Test(priority =5)
+
+	@Test(priority = 5)
 	public void doLoginTest() {
-		accPage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password")); 
+		accPage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		Assert.assertTrue(accPage.isLogOutExist());
 	}
 
