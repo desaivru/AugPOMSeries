@@ -83,7 +83,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/desaivru/AugPOMSeries.git'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src\test\resources\testrunner\testng_Sanity.xml"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/testng_Sanity.xml"
                     
                 }
             }
