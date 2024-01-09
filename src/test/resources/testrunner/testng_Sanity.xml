@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Opencart Sanity Suite" verbose="3" thread-count="1">
+<suite name="Opencart Sanity Suite" verbose="3" thread-count="1" parallel="tests">
 
 	<listeners>
 		<listener class-name="com.qa.opencart.listeners.ExtentReportListener" />
@@ -11,11 +11,15 @@
 
 		<listener class-name="com.qa.opencart.listeners.TestAllureListener" />
 	</listeners>
-	
-<test name="Login Page Test">
+
+
+	<test name="Login Page Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
 	</test>
+
+
+
 </suite>
