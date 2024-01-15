@@ -69,7 +69,7 @@ public class AccountPage {
 		eleUtil.waitForVisisbilityOfElement(search, AppConstants.MEDIUM_DEFAULT_WAIT).clear();
 		eleUtil.doSendKeys(search, searchKey);
 		eleUtil.doClick(searchLocator);
-		return new SearchResultPage(driver); // TDD approach as we created object first andten created class.
+		return new SearchResultPage(driver); // TDD approach as we created object first and then created class.
 	}
 
 }
